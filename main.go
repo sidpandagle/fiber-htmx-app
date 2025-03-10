@@ -47,6 +47,12 @@ func main() {
 		}, "layouts/main")
 	})
 
+	app.Get("/report", func(c *fiber.Ctx) error {
+		return c.Render("report", fiber.Map{
+			"Title": "Report",
+		}, "layouts/main")
+	})
+
 	log.Fatal(app.Listen(getPort()))
 }
 
